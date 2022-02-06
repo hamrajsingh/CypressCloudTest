@@ -1,0 +1,24 @@
+{
+  "name": "Project1",
+  "version": "1.0.0",
+  "description": "My cloud app project",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "rimraf -r ./cypress/report/mochawesome-report/*.json && rimraf -r ./cypress/report/output.json && rimraf -r ./cypress/report/report.html",
+    "test": "npm run cypress-test || npm run posttest",
+    "cypress-test": "cypress run",
+    "posttest": "npm run merge-reports && npm run generate-htmlreport",
+    "merge-reports": "mochawesome-merge ./cypress/report/mochawesome-report/*.json > ./cypress/report/output.json",
+    "generate-htmlreport": "marge ./cypress/report/output.json --reportDir cypress/report/report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^9.4.1",
+    "mochawesome": "^7.0.1",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.0.1",
+    "rimraf": "^3.0.2"
+  }
+}

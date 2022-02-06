@@ -1,0 +1,87 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-02-06T18:38:45.208Z",
+    "end": "2022-02-06T18:39:13.196Z",
+    "duration": 26050,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "48b10909-6038-43b3-93ac-d35c4e0192a9",
+      "title": "",
+      "fullFile": "cypress/integration/my_new_file.js",
+      "file": "cypress/integration/my_new_file.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "cloudAppE2ETest",
+          "fullTitle": "cloudAppE2ETest",
+          "timedOut": null,
+          "duration": 26050,
+          "state": "passed",
+          "speed": "slow",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "cy.visit(\"http://localhost:3001\");\ncy.wait(10000);\ncy.get('q').then($lbl1 => {\n  const txt = $lbl1.text();\n  cy.reload();\n  cy.wait(5000);\n  cy.get('q').should($lbl2 => {\n    expect($lbl2.text()).not.to.eq(txt);\n  });\n});\ncy.wait(5000);",
+          "err": {},
+          "uuid": "86e9cdd8-74ec-44d7-a95c-d68dfba00ca2",
+          "parentUUID": "48b10909-6038-43b3-93ac-d35c4e0192a9",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [
+        "86e9cdd8-74ec-44d7-a95c-d68dfba00ca2"
+      ],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 26050,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/report/mochawesome-report"
+      },
+      "version": "6.0.1"
+    }
+  }
+}
